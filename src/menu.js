@@ -15,7 +15,9 @@ class Menu {
   }
 
   dish(dish) {
+    if (this.isOnTheMenu(dish)) {
     return this.dishes.find(item => item.name === dish)
+    } throw new Error(`Sorry, ${dish} is not on the menu`)
   }
 
   removeDish(dish) {

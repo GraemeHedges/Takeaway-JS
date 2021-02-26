@@ -30,7 +30,7 @@ describe('Menu', function(){
       menu.addDish(dish);
     });
 
-    describe('isOnTheMenu', function(){
+    describe('.isOnTheMenu', function(){
       it('returns true if a dish is on the menu, false if it is not', function(){
         expect(menu.isOnTheMenu('Pizza')).toBe(true)
         expect(menu.isOnTheMenu('Parmo')).toBe(false)
@@ -43,6 +43,10 @@ describe('Menu', function(){
       it('returns a specific dish from the menu by name', function(){
         expect(menu.dish('Pizza')).toEqual(dish);
       });
+
+      it('throws an error if the dish is not on the menu', function(){
+        expect(function() {menu.dish('Parmo')}).toThrowError('Sorry, Parmo is not on the menu')
+      })
     });
   
     describe('.removeDish', function(){
