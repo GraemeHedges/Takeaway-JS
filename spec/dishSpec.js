@@ -10,27 +10,27 @@ describe('Dish', function(){
 
   describe('.name', function(){
     it('returns the name of the dish', function(){
-      expect(dish.getName()).toEqual('Pizza');
+      expect(dish.name).toEqual('Pizza');
     });
   });
 
-  describe('.getprice', function(){
+  describe('.price', function(){
     it('returns the price of the dish', function(){
-      expect(dish.getPrice()).toEqual(10);
+      expect(dish.price).toEqual(10);
     });
   });
 
   describe('._setName', function(){
     it('allows the dishes name to be changed', function(){
       dish._setName('Pineapple Pizza');
-      expect(dish.getName()).toEqual('Pineapple Pizza');
+      expect(dish.name).toEqual('Pineapple Pizza');
     });
   })
 
   describe('._setPrice', function(){
     it('allows the dishes price to be changed', function(){
       dish._setPrice(15);
-      expect(dish.getPrice()).toEqual(15);
+      expect(dish.price).toEqual(15);
     });
   });
 

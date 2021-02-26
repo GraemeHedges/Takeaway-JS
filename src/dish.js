@@ -7,14 +7,6 @@ class Dish{
     this.price = price;
   }
 
-  getName() {
-    return this.name;
-  }
-
-  getPrice() {
-    return this.price;
-  }
-
   _setName(name) {
     this.name = name;
   }
@@ -22,5 +14,4 @@ class Dish{
   _setPrice(price) {
     this.price = price;
   }
-
 }

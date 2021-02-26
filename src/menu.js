@@ -7,7 +7,16 @@ class Menu {
   }
 
   getDishes() {
-    return this.dishes;
+    return this.menu;
   }
 
-};
+  addDish(dish) {
+    this.dishes.push(dish)
+  }
+
+  removeDish(dish) {
+    this.dishes = this.dishes.filter(function(item) {
+      return item.name !== dish
+    })
+  }
+}
