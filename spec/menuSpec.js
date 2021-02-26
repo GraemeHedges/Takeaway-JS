@@ -34,6 +34,7 @@ describe('Menu', function(){
       it('returns true if a dish is on the menu, false if it is not', function(){
         expect(menu.isOnTheMenu('Pizza')).toBe(true);
         expect(menu.isOnTheMenu('Parmo')).toBe(false);
+        
         menu.addDish(dish2);
         expect(menu.isOnTheMenu('Parmo')).toBe(true);
       });
