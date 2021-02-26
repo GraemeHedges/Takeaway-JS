@@ -10,6 +10,7 @@ describe('Menu', function(){
     menu = new Menu;
   });
 
+
   describe('.dishes', function(){
     it('has an empty collection of dishes', function(){
       expect(menu.dishes).toEqual([]);
@@ -22,15 +23,34 @@ describe('Menu', function(){
       expect(menu.dishes).toContain(dish);
     });
   }); 
-  
-  describe('.removeDish', function(){
-    it('removes a dish from the menu using the dishes name', function(){
+
+  describe('A single item menu', function(){  
+
+    beforeEach(function(){
       menu.addDish(dish);
-      menu.addDish(dish2);
-      expect(menu.dishes).toContain(dish);
-      expect(menu.dishes).toContain(dish2);
-      menu.removeDish('Pizza');
-      expect(menu.dishes).not.toContain(dish);
+    });
+
+    describe('isOnTheMenu', function(){
+      it('returns true if a dish is on the menu, false if it is not', function(){
+        expect(menu.isOnTheMenu('Pizza')).toBe(true)
+        expect(menu.isOnTheMenu('Parmo')).toBe(false)
+        menu.addDish(dish2)
+        expect(menu.isOnTheMenu('Parmo')).toBe(true)
+      })
+    })
+
+    describe('.dish', function(){
+      it('returns a specific dish from the menu by name', function(){
+        expect(menu.dish('Pizza')).toEqual(dish);
+      });
+    });
+  
+    describe('.removeDish', function(){
+      it('removes a dish from the menu using the dishes name', function(){
+        expect(menu.dishes).toContain(dish);
+        menu.removeDish('Pizza');
+        expect(menu.dishes).not.toContain(dish);
+      });
     });
   });
 });

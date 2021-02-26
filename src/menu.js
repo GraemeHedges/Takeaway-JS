@@ -14,9 +14,17 @@ class Menu {
     this.dishes.push(dish)
   }
 
+  dish(dish) {
+    return this.dishes.find(item => item.name === dish)
+  }
+
   removeDish(dish) {
-    this.dishes = this.dishes.filter(function(item) {
-      return item.name !== dish
-    })
+    this.dishes = this.dishes.filter(item => item.name !== dish)
+  }
+
+  isOnTheMenu(dish){
+    if (this.dishes.find(item => item.name === dish)) {
+      return true
+    } return false
   }
 }
