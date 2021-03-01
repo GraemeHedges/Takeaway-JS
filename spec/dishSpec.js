@@ -33,5 +33,4 @@ describe('Dish', function(){
       expect(dish.price).toEqual(15);
     });
   });
-
 });

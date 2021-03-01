@@ -26,12 +26,6 @@ describe('Order', function(){
       order.addToOrder(dish2);
       expect(order.order).toContain(dish2);
     });
-
-    it('will not add non menu items to the order', function(){
-      // need a mock here that returns an error
-      // this doesn't then get passed to the addToOrder function
-      // and the spurious item is not in the order
-    })
   });
   
   describe('.removeFromOrder', function(){

@@ -13,5 +13,4 @@ class Order {
   removeFromOrder(dish) {
     this.order = this.order.filter(item => item.name !== dish)
   }
-
 }
